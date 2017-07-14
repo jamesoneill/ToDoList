@@ -1,0 +1,21 @@
+﻿@model JO.ToDoList.Models.ToDoCollectionViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+    <div class="jumbotron">
+        <h1>ToDo List</h1>
+        <div class="form-wrapper">
+            <div class="inline"> 
+                <textarea type="text" class="form-control pull-left jqDescription" placeholder="New Task..." rows="3"></textarea>
+                <button class="btn btn-default pull-right" data-url='@Url.Action("Index", "ToDo")'>Add Task</button>
+            </div>
+        </div>
+        
+        <div class="clearfix"></div>
+        <div class="jqList">
+            @foreach (var toDo in Model.ToDoCollection)
+            {
+                @Html.Partial("~/Views/Partials/_Task.cshtml", toDo)
+            }
+        </div>
+    </div>

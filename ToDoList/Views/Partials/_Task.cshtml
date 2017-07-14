@@ -1,0 +1,15 @@
+﻿@model JO.Core.Models.ToDo
+
+    <div class="row jqToDo">
+        <div class="col-sm-10">
+            <div class="checkbox pull-left">
+                <label>
+                    <input type="checkbox" aria-label="..." checked="@Model.Complete" data-id="@Model.Id" data-url='@Url.Action("Complete", "ToDo")'>
+                    <span class='@(Model.Complete ? "strike-through" : "")'>@Model.Description</span>
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-default pull-right" data-id="@Model.Id" data-url='@Url.Action("Remove", "ToDo")'>Remove</button>
+        </div>
+    </div>
